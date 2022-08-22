@@ -2,6 +2,8 @@ import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import { useRouter } from "next/router";
+import Link from "next/link";
+import { Button } from "antd";
 
 export default function Home() {
   const { name } = useRouter().query;
@@ -20,6 +22,10 @@ export default function Home() {
             {!name ? "Next.js!" : name}
           </a>
         </h1>
+
+        <Button type="primary" className={styles.formButton}>
+          <Link href="/form">Form</Link>
+        </Button>
 
         <p className={styles.description}>
           Get started by editing{" "}
